@@ -1,2 +1,13 @@
-package org.example.dividend.persist;public interface MemberRepository {
+package org.example.dividend.persist;
+
+import org.example.dividend.model.MemberEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface MemberRepository extends JpaRepository<MemberEntity, Long> {
+
+    Optional<MemberEntity> findByUsername(String username);
+
+    boolean existsByUsername(String username);
 }

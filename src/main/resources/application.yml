@@ -1,19 +1,44 @@
-spring.application.name=dividend
-spring.h2.console.enabled=true
-spring.h2.console.path=/h2-console
+spring:
+  application:
+    name: dividend
+  security:
+    oauth2:
+      resourceserver:
 
-spring.jpa.hibernate.ddl-auto=create
-spring.jpa.show-sql=true
-spring.jpa.defer-datasource-initialization=true
 
-spring.datasource.driver-class-name=org.h2.Driver
-spring.datasource.url=jdbc:h2:mem:dayone;DB_CLOSE_DELAY=-1
-spring.datasource.username=sa
-spring.datasource.password=
 
-spring.data.redis.host=localhost
-spring.data.redis.port=6379
+  h2:
+    console:
+      path: /h2-console
+      enabled: 'true'
 
-scheduler.scrap.yahoo= 0 0 0 * * *
+  jpa:
+    defer-datasource-initialization: 'true'
+    hibernate:
+      ddl-auto: create
+    show-sql: 'true'
 
-security.
+
+  datasource:
+    password: ''
+    driver-class-name: org.h2.Driver
+    username: sa
+    url: jdbc:h2:mem:dayone;DB_CLOSE_DELAY=-1
+
+
+  data:
+    redis:
+      port: '6379'
+      host: localhost
+
+
+  scheduler:
+  scrap:
+    yahoo: 0 0/5 * * * *
+
+
+
+  jwt:
+    secret: ZGF5b25lLXNwcmluZy1ib290LWRpdmlkZW5kLXByb2plY3QtdHV0b3JpYWwtand0LXNlY3JldC1r
+
+  

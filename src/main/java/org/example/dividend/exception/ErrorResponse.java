@@ -1,2 +1,14 @@
-package org.example.dividend.exception;public class ErrorResponse {
+package org.example.dividend.exception;
+
+import lombok.Builder;
+import lombok.Data;
+
+
+@Data
+@Builder
+public class ErrorResponse {
+    private int code;
+
+    private String message;
+
 }
